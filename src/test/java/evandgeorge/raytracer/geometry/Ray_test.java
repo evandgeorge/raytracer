@@ -6,12 +6,16 @@ import static org.junit.Assert.*;
 public class Ray_test {
 
     @Test
-    public void test_storesPositionAndDirection() {
-        Vector3f pos = new Vector3f(0, 0, 0);
-        Vector3f dir = new Vector3f(0, 0, 0);
+    public void test_storesPosition() {
+        Vector3f pos = new Vector3f(2, -89, .345);
+        Ray r = new Ray(pos, null);
+        assertEquals(pos, r.posV);
+    }
 
-        Ray r = new Ray(pos, dir);
-        assertEquals(pos, r.pos);
-        assertEquals(dir, r.dir);
+    @Test
+    public void test_storesDirection() {
+        Vector3f dir = new Vector3f(3, 5, -345);
+        Ray r = new Ray(null, dir);
+        assertEquals(dir, r.dirV);
     }
 }
